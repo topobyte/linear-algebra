@@ -22,7 +22,7 @@ repositories {
 }
 
 dependencies {
-    compile 'gov.nist.math:jama:1.0.3'
+    compile 'de.topobyte:jama:1.1.0'
 
     compile 'org.slf4j:slf4j-api:1.6.1'
 

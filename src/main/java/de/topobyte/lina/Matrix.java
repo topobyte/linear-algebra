@@ -249,15 +249,15 @@ public class Matrix
 
 	public Matrix invert()
 	{
-		Jama.Matrix jama = new Jama.Matrix(values);
-		Jama.Matrix jamaInverse = jama.inverse();
+		jama.Matrix jama = new jama.Matrix(values);
+		jama.Matrix jamaInverse = jama.inverse();
 		Matrix inverse = new Matrix(jamaInverse.getArray());
 		return inverse;
 	}
 
 	public double determinant()
 	{
-		Jama.Matrix jama = new Jama.Matrix(values);
+		jama.Matrix jama = new jama.Matrix(values);
 		return jama.det();
 	}
 
@@ -268,9 +268,9 @@ public class Matrix
 
 	public Matrix solve(Vector vector)
 	{
-		Jama.Matrix jama = new Jama.Matrix(values);
-		Jama.Matrix b = new Jama.Matrix(vector.getValues());
-		Jama.Matrix solution = jama.solve(b);
+		jama.Matrix jama = new jama.Matrix(values);
+		jama.Matrix b = new jama.Matrix(vector.getValues());
+		jama.Matrix solution = jama.solve(b);
 		return new Matrix(solution.getArray());
 	}
 
