@@ -19,6 +19,8 @@ package de.topobyte.lina;
 
 import java.util.Random;
 
+import de.topobyte.formatting.DoubleFormatter;
+
 public class Matrix
 {
 
@@ -210,12 +212,16 @@ public class Matrix
 	@Override
 	public String toString()
 	{
+		DoubleFormatter formatter = new DoubleFormatter();
+		// TODO: set width of formatter to 10
+		formatter.setFractionDigits(4);
+
 		StringBuilder strb = new StringBuilder();
 		String newline = System.getProperty("line.separator");
 
 		for (int y = 0; y < getHeight(); y++) {
 			for (int x = 0; x < getWidth(); x++) {
-				strb.append(String.format("%10.4f", getValue(x, y)));
+				formatter.format(strb, getValue(x, y));
 				if (x < getWidth() - 1) {
 					strb.append(" ");
 				}

@@ -52,7 +52,7 @@ public class Dimension
 	@Override
 	public String toString()
 	{
-		return String.format("%dx%d", height, width);
+		return height + "x" + width;
 	}
 
 }

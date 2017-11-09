@@ -17,6 +17,8 @@
 
 package de.topobyte.lina;
 
+import de.topobyte.formatting.DoubleFormatter;
+
 public class Vector extends Matrix
 {
 
@@ -71,10 +73,12 @@ public class Vector extends Matrix
 
 	public String toString(int k)
 	{
+		DoubleFormatter formatter = new DoubleFormatter();
+		formatter.setFractionDigits(k);
+
 		StringBuilder strb = new StringBuilder();
 		for (int i = 0; i < getSize(); i++) {
-			String format = String.format("%%.%df", k);
-			strb.append(String.format(format, getValue(i)));
+			formatter.format(strb, getValue(i));
 			if (i < getSize() - 1) {
 				strb.append(",");
 			}
