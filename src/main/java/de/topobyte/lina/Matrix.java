@@ -213,8 +213,8 @@ public class Matrix
 	public String toString()
 	{
 		DoubleFormatter formatter = new DoubleFormatter();
-		// TODO: set width of formatter to 10
 		formatter.setFractionDigits(4);
+		formatter.setMinWidth(10);
 
 		StringBuilder strb = new StringBuilder();
 		String newline = System.getProperty("line.separator");
